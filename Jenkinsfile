@@ -4,19 +4,21 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "Code pulled from GitHub"
+                echo "Code fetched from GitHub"
             }
         }
 
         stage('Build') {
             steps {
-                sh 'ls -l'
+                echo "Running Hello World build"
+                sh 'echo Hello World from Jenkins Pipeline'
             }
         }
 
-        stage('Test') {
+        stage('Verify') {
             steps {
-                sh 'cat texxtfile.js'
+                echo "Listing files in workspace"
+                sh 'ls -l'
             }
         }
     }
